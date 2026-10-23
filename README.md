@@ -174,4 +174,3 @@ Released under the MIT License — see [LICENSE](LICENSE).
 ## Author
 
 **Mashhud Farah** — [github.com/MashhudFarah](https://github.com/MashhudFarah)
-```

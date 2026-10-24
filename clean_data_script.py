@@ -37,7 +37,7 @@ def standardize_payment(val):
         return 'Cash on Delivery' if 'delivery' in s or 'cod' in s else 'Cash'
     if 'upi' in s:
         return 'UPI'
-    if 'paypal' in s:
+    if 'paypal' in s.replace(' ', ''):
         return 'PayPal'
     if 'bank' in s and 'transfer' in s:
         return 'Bank Transfer'
@@ -57,8 +57,12 @@ def standardize_country(val):
         return 'Canada'
     if 'australia' in s or s in ('au','aus'):
         return 'Australia'
-    if 'india' in s:
+    if 'india' in s or s == 'in':
         return 'India'
+    if s in ('de', 'germany', 'deutschland'):
+        return 'Germany'
+    if s in ('uae', 'unitedarabemirates'):
+        return 'UAE'
     # default: title case words
     return ' '.join(w.title() for w in str(val).strip().split())
 
